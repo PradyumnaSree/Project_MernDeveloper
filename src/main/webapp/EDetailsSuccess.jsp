@@ -12,7 +12,6 @@ String msg=(String)request.getAttribute("msg");
 out.println(msg);
 %>
 <br>
-<a href="logout">LogOut</a>
 <%@include file="LoginSuccess.jsp" %>
 </body>
 </html>

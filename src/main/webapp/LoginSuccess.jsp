@@ -11,12 +11,13 @@
 <%
 LoginBean ab=(LoginBean)application.getAttribute("lBean");
 out.println("Welcome "+ab.getF_USERNAME());
+out.println((String)request.getAttribute("msg"));
 %>
 <br>
 <a href="EDetails.html">Insert Employee Details</a><br>
 <a href="Update.html">Update Employee Details</a><br>
 <a href="Delete.html">Delete Employee Details</a><br>
 <a href="retrieve">Show all Employee</a><br>
-<a href="logout">Logout</a>
+<a href="l">Logout</a>
 </body>
 </html>

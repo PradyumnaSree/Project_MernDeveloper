@@ -23,7 +23,7 @@ public class EDetailsServlet extends HttpServlet
 		ab.setF_MOBILE(Long.parseLong(req.getParameter("F_MOBILE")));
 		ab.setF_DESIGNATION(req.getParameter("F_DESIGNATION"));
 		ab.setF_GENDER(req.getParameter("F_GENDER"));
-		System.out.println(req.getParameter("F_GENDER")+"...........");
+//		System.out.println(req.getParameter("F_GENDER")+"...........");
 		ab.setF_COURSE(req.getParameter("F_COURSE"));
 		Part filePart = req.getPart("F_IMAGE"); 
 //		System.out.println(filePart.getName());
@@ -32,9 +32,7 @@ public class EDetailsServlet extends HttpServlet
 		{
 			
 		    InputStream inputStream = filePart.getInputStream();
-		    
-		   
-	ab.setF_IMAGE(inputStream);
+		    ab.setF_IMAGE(inputStream);
 		}
 		int k=new EDetailsDAO().insert(ab);
 		if(k>0)

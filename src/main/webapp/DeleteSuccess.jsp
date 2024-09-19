@@ -9,7 +9,7 @@
 <body>
 <%
 String msg=(String)request.getAttribute("msg");
-out.println(msg);
+ out.println(msg);
 %>
 <%@include file= "LoginSuccess.jsp"%>
 </body>

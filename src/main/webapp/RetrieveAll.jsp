@@ -15,5 +15,6 @@ out.println(msg);
 List<CreateAdminBean> list = (List<CreateAdminBean>) request.getAttribute("list");
 out.println(list);   
 %>
+<%@include file= "LoginSuccess.jsp"%>
 </body>
 </html> 

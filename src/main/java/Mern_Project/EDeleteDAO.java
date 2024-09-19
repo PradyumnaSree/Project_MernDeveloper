@@ -10,8 +10,6 @@ public class EDeleteDAO
 {
 	CreateAdminBean ab;
 	int k;
-	int klb;
-	LoginBean lb;
 	Connection con=DBConnection.getCon();
 	public CreateAdminBean retrieve(String name, String eMail)
 	{
@@ -21,6 +19,7 @@ public class EDeleteDAO
 			ps.setString(1, name);
 			ps.setString(2, eMail);
 			ResultSet rs=ps.executeQuery();
+			System.out.println("rs: "+rs);
 			while(rs.next())
 			{
 				ab=new CreateAdminBean();
@@ -36,41 +35,12 @@ public class EDeleteDAO
 				ab.setF_COURSE(rs.getString(8));
 				ab.setF_CREATEDATE(rs.getString(9));
 			}
-			PreparedStatement ps1=con.prepareStatement("SELECT * FROM T_LOGIN WHERE F_NAME=?");
-			ps1.setString(1, name);
-			ResultSet rs1=ps1.executeQuery();
-			while(rs1.next())
-			{
-				lb.setF_SNO(rs1.getInt(1));
-				lb.setF_USERNAME(rs1.getString(2));
-				lb.setF_PWORD(rs.getString(3));
-			}
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		return ab;
-	}
-	public LoginBean retrieveLB(String name)
-	{
-		try
-		{
-			PreparedStatement ps1=con.prepareStatement("SELECT * FROM T_LOGIN WHERE F_NAME=?");
-			ps1.setString(1, name);
-			ResultSet rs1=ps1.executeQuery();
-			while(rs1.next())
-			{
-				lb.setF_SNO(rs1.getInt(1));
-				lb.setF_USERNAME(rs1.getString(2));
-				lb.setF_PWORD(rs1.getString(3));
-			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return lb;
 	}
 	public int delete(CreateAdminBean ab)
 	{
@@ -86,19 +56,5 @@ public class EDeleteDAO
 			e.printStackTrace();
 		}
 		return k;
-	}
-	public int deleteLB(LoginBean lb)
-	{
-		try
-		{
-			PreparedStatement ps=con.prepareStatement("DELETE T_EMPLOYEE WHERE F_NAME=?");
-			ps.setString(1, ab.getF_NAME());
-			k=ps.executeUpdate();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return klb;
 	}
 }

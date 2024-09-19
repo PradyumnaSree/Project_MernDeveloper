@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet
 				sct.setAttribute("lBean", ab);
 //				Cookie ck=new Cookie("uName",ab.getF_USERNAME());
 //				res.addCookie(ck);
+				req.setAttribute("msg", "<br>Login Successful...");
 				req.getRequestDispatcher("LoginSuccess.jsp").forward(req, res);
 			}
 		}

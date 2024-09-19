@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="update" method="post"  enctype="multipart/form-data">
+Name: <input type="text" name="F_NAME"  placeholder="Enter your name" required><br>
+Email: <input type="text" name="F_EMAIL"  placeholder="Enter your email"><br>
+Mobile No: <input type="text" name="F_MOBILE"  placeholder="Enter your Mobile Number"><br>
+Designation: <select name="F_DESIGNATION" id="designations"><br>
+<option value="">Select your designation</option>
+<option value="HR">HR</option>
+<option value="Sales">Sales</option>
+<option value="Software Developer">Software Developer</option>
+</select><br>
+Gender: <input type="radio" name="F_GENDER" value="Male">Male
+<input type="radio" name="F_GENDER" value="Female">Female<br>
+Course: <input type="checkbox" name="F_COURSE" value="MCA">MCA
+<input type="checkbox" name="F_COURSE" value="MBA">MBA
+<input type="checkbox" name="F_COURSE" value="B.Tech">B.Tech
+<input type="checkbox" name="F_COURSE" value="B.Sc">B.Sc
+<input type="checkbox" name="F_COURSE" value="B.A">B.A
+<br>
+Upload an image:<br> <input type="file" name="F_IMAGE" accept=".jpg, .png" required> <br>
+<input type="submit" name="Submit">
+</form>
+</body>
+</html>
